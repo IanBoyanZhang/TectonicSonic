@@ -42,3 +42,4 @@ client/app/bower_components/*
 client/node_modules/*
 client/index.js
 client/server/*
+client/index-async.html

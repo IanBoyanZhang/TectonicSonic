@@ -42,6 +42,7 @@ body {
 }
 
 .playersView {
+  height: auto;
   position: absolute;
   float: left;
   margin-left: 20px;
@@ -117,6 +118,24 @@ body {
   float:left;
   /*transform: rotateX(50deg) rotateY(20deg) rotateZ(15deg);*/
   transform: rotateX(50deg) rotateY(0deg) rotateZ(15deg);
+}
+
+.doubleCard {
+  /*Resize */
+  /* Card Dimension */
+  width: 75px;
+  height: 110px;   
+  display: block;
+  border: 2px solid black;
+  border-radius: 10px;
+  position: relative;
+  margin: 3px 3px 3px 3px;
+  background: white;
+  z-index: 5;
+  cursor: pointer;
+  float:left;
+  /*transform: rotateX(50deg) rotateY(20deg) rotateZ(15deg);*/
+  transform: rotateX(40deg) rotateY(-10deg) rotateZ(10deg);
 }
 
 .table {
