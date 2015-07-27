@@ -116,6 +116,35 @@ angular.module('app.view1', ['ngRoute'])
 		return null;
 	};
 
+
+	var roundLogic = function(gameState) {
+		var cards = [];
+		var round = gameState.round;
+		console.log(round);
+		var assignCards = function(numOfCards) {
+			for (var i = 0, l = numOfCards; i < l; i++) {
+				cards[i] = gameState.cards[i];
+			};
+		};
+
+		var roundObj = {
+			'2': assignCards(3),
+		}
+		if (round === 2) {
+			assignCards(3);
+		};
+
+		if (round === 3) {
+			assignCards(4);
+		};
+
+		if (round === 4) {
+			assignCards(5);
+		};		
+
+		return cards;
+	}
+
 	// expect input array of users
 	var renderUsers = function(userGroup, mySelf) {
 		var users = [];
@@ -149,10 +178,11 @@ angular.module('app.view1', ['ngRoute'])
 		// required for dynamically changed scope
 		$scope.$apply(function() {
 			$scope.gameState = JSON.parse(gameStateEmu.gameStateJSON[0]); 				// Test only
+			renderUsers($scope.gameState.user, $scope.mySelf);
+			// renderPublicDeck($scope.gameState.cards);
+
+			renderPublicDeck(roundLogic($scope.gameState));
 		});
-		renderUsers($scope.gameState.user, $scope.mySelf);
-		// check game status before putting cards on table?
-		renderPublicDeck($scope.gameState.cards)
 	};
 
 	init();

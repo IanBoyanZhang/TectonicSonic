@@ -204,7 +204,7 @@ angular.module('app.service', [])
 .factory('gameStateEmu', [function() {
   var gameStateJSON = [];
   var gameState = {
-    round: 1,
+    round: 2,
     cards: ["qh","kh","ah","2c","3s"],
     minstake: 200,
     turn: 27694,
